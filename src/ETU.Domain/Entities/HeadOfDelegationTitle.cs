@@ -1,14 +1,16 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ETU.Domain.Common;
 
 namespace ETU.Domain.Entities
 {
     [Table("HeadOfDelegationTitle", Schema = "entity")] // Tablo adı ve şeması belirtiliyor
-    public class HeadOfDelegationTitle
+    public class HeadOfDelegationTitle : BaseEntity
     {
+        /*
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Otomatik artan birincil anahtar
-        public int ID { get; set; }
+        public int ID { get; set; } */
 
         [Required]
         [MaxLength(200)]

@@ -1,14 +1,16 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ETU.Domain.Common;
 
 namespace ETU.Domain.Entities
 {
     [Table("Activity", Schema = "entity")] // Tablo adı ve şeması belirtiliyor
-    public class Activity
+    public class Activity : BaseEntity
     {
+        /*
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Otomatik artan birincil anahtar
-        public int ID { get; set; }
+        public int ID { get; set; } */
 
         [Required]
         [MaxLength(500)]
@@ -75,9 +77,6 @@ namespace ETU.Domain.Entities
 
         [Required]
         public DateTime CreatedDate { get; set; }
-
-        [Required]
-        public bool IsDeleted { get; set; }
 
         [Required]
         [MaxLength(200)]
